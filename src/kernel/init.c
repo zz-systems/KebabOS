@@ -1,4 +1,4 @@
-#include "kernel/memory.h"
+#include <kernel/memory.h>
 
 extern unsigned __bss_start, __bss_end;
 extern unsigned __sbss_start, __sbss_end;

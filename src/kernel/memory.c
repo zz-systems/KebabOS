@@ -1,9 +1,9 @@
 // Taken from https://github.com/embeddedartistry/embedded-resources/
 // Adapted by Sergej Zuyev
 
-#include "kernel/memory.h"
-#include "kernel/linked_list.h"
-#include "sys/types.h"
+#include <kernel/memory.h>
+#include <kernel/linked_list.h>
+#include <sys/types.h>
 
 #define MIN_ALLOC_SIZE          (4)
 #define ALLOC_HEADER_SIZE       offsetof(kalloc_block_t, block)

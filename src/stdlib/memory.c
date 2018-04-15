@@ -1,5 +1,5 @@
-#include "sys/memory.h"
-#include "kernel/memory.h"
+#include <sys/memory.h>
+#include <kernel/memory.h>
 
 void* malloc(uint32_t size)
 {

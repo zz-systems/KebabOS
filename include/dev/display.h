@@ -27,9 +27,9 @@
 
 #pragma once
 
-#include "plasma.h"
-#include "kernel/device.h"
-#include "sys/types.h"
+#include <kernel/kernel.h>
+#include <kernel/device.h>
+#include <sys/types.h>
 
 // control register bits
 #define DISPLAY_CONTROL_IMMEDIATE           0x04

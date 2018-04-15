@@ -1,8 +1,8 @@
-#include "sys/file.h"
-#include "sys/memory.h"
-#include "sys/string.h"
-#include "kernel/io.h"
-#include "kernel/devicemap.h"
+#include <sys/file.h>
+#include <sys/memory.h>
+#include <sys/string.h>
+#include <kernel/io.h>
+#include <kernel/kernel.h>
 
 FILE* fopen(const char* path, const char* mode)
 {
@@ -170,7 +170,7 @@ void fflush(FILE* file)
     { 
         for(uint8_t *buf_ptr = file->write_buffer; buf_ptr < file->write_ptr; buf_ptr++)
         {
-            dputc(file->device_desc->device, *buf_ptr);
+            kd_putc(file->device_desc->device, *buf_ptr);
         }
     }
 

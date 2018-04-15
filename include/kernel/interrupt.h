@@ -1,9 +1,21 @@
 #pragma once
 
-#define IR_UART_READ    (1 << 0)
-#define IR_UART_WRITE   (1 << 1)
-#define IR_CNT_OVERFLOW (1 << 2)
-
+/**
+ * @brief interrupt handler signature
+ */
 typedef void (*ir_handler)(void);
-//typedef void (*ir_handler)(unsigned);
-void kregister_ir_handler(ir_handler handler, unsigned ir_flag);
+
+/**
+ * @brief register interrupt handler
+ * 
+ * @param handler handler function
+ * @param ir_flag lower 5 bits: interrupt number, bit 16: polarity, bit 17: edge detection
+ */
+void kir_register_handler(ir_handler handler, unsigned ir_flag);
+
+/**
+ * @brief enable system interrupts
+ * 
+ * @param enable enable (boolean)
+ */
+extern void kir_enable(unsigned enable);

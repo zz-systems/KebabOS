@@ -1,7 +1,7 @@
-#include "kernel/interrupt.h"
-#include "kernel/devicemap.h"
-#include "kernel/io.h"
-#include "sys/types.h"
+#include <kernel/kernel.h>
+#include <kernel/interrupt.h>
+#include <kernel/io.h>
+#include <sys/types.h>
 
 // IR table
 ir_handler ir_handlers[32] = { 0 };
@@ -12,7 +12,7 @@ void kir_handler()
 
     for(int i = 0; i < 32; i++)
     {
-        int state   = ddread(irc0);
+        int state   = kdd_read(irc0);
         int flag    = state & (1 << i);
 
         if(state == 0)
@@ -34,7 +34,7 @@ void kir_handler()
 
 //extern ir_handler ISR_Table[32];
 
-void kregister_ir_handler(ir_handler handler, unsigned ir_flag)
+void kir_register_handler(ir_handler handler, unsigned ir_flag)
 {
     int interrupt   = (ir_flag & 0x001F);
     int polarity    = (ir_flag >> 16) & 1;

@@ -1,6 +1,6 @@
-#include "sys/wait.h"
-#include "dev/timer.h"
-#include "kernel/devicemap.h"
+#include <sys/wait.h>
+#include <dev/timer.h>
+#include <kernel/devicemap.h>
 
 void wait(int msec)
 {

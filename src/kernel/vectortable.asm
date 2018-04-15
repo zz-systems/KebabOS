@@ -5,13 +5,13 @@
 
 	.section	.vector.reset
 _reset_vector:
-	la		$26, crtp_init
+	la		$26, kinit
 	jr		$26
 	nop
 	
 	.section	.vector.interrupt	
 _interrupt_vector:
-	la		$26, interrupt_service_routine
+	la		$26, kir_global_handler
 	jr		$26
 	nop
 

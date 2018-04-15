@@ -23,9 +23,9 @@
 
 #pragma once
 
-#include "plasma.h"
-#include "kernel/device.h"
-#include "sys/types.h"
+#include <kernel/kernel.h>
+#include <kernel/device.h>
+#include <sys/types.h>
 
 typedef struct uart_device
 {

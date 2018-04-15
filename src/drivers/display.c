@@ -1,18 +1,18 @@
-#include "dev/display.h"
+#include <dev/display.h>
 
 void display_reset(display* display)
 {
-    device_reset(&display->device);
+    kd_reset(&display->device);
 }
 
 void display_enable(display* display)
 {
-    device_enable(&display->device);
+    kd_enable(&display->device);
 }
 
 void display_disable(display* display)
 {
-    device_disable(&display->device);
+    kd_disable(&display->device);
 }
 
 void display_set_textmode(display* display)

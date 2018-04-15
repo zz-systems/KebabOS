@@ -4,9 +4,8 @@ project(plasma-firmware)
 include_directories(include)
 
 set_source_files_properties(
-        src/boot.asm
-        src/crt.asm
-        src/vectortable.asm
+        src/kernel/kernel.asm
+        src/kernel/vectortable.asm
         PROPERTIES COMPILE_FLAGS "-x assembler-with-cpp")
 
 add_library(stdlib STATIC       src/stdlib/file.c
@@ -23,8 +22,8 @@ add_library(drivers STATIC      src/drivers/uart.c
 
 target_link_libraries(drivers PUBLIC linker_cfg kernel)
 
-add_library(kernel STATIC       src/vectortable.asm 
-                                src/crt.asm 
+add_library(kernel STATIC       src/kernel/vectortable.asm 
+                                src/kernel/kernel.asm 
                                 src/kernel/io.c
                                 src/kernel/device.c
                                 src/kernel/kernel.c

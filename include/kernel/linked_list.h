@@ -4,7 +4,8 @@
 
 #pragma once
 
-#include "sys/types.h"
+#include <kernel/kernel.h>
+#include <sys/types.h>
 
 typedef struct kll_node 
 {

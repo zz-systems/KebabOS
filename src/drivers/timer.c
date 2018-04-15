@@ -1,5 +1,5 @@
-#include "dev/timer.h"
-#include "kernel/io.h"
+#include <dev/timer.h>
+#include <kernel/io.h>
 
 void timer_set_unit(timer_t* timer, uint32_t unit)
 {

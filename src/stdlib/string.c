@@ -1,7 +1,5 @@
-#include "sys/string.h"
+#include <sys/string.h>
 
-// strlen: get length of string
-// taken from https://en.wikibooks.org/wiki/C_Programming/string.h/strlen
 size_t strlen(const char * str)
 {
     const char *s;
@@ -10,8 +8,6 @@ size_t strlen(const char * str)
     return(s - str);
 }
 
-// reverse:  reverse string s in place
-// taken from: https://en.wikibooks.org/wiki/C_Programming/stdlib.h/itoa
 void reverse(char s[])
 {
     int i, j;
@@ -23,8 +19,7 @@ void reverse(char s[])
         s[j] = c;
     }
 }
-// itoa:  convert n to characters in s
-// taken from: https://en.wikibooks.org/wiki/C_Programming/stdlib.h/itoa
+
 void itoa(int n, char s[])
 {
     int i, sign;
@@ -41,8 +36,6 @@ void itoa(int n, char s[])
     reverse(s);
 }
 
-// strcmp:  compare s1 to s2
-// taken from: https://en.wikibooks.org/wiki/C_Programming/string.h/strcmp
 int strcmp (const char * s1, const char * s2)
 {
     for(; *s1 == *s2; ++s1, ++s2)
@@ -51,8 +44,6 @@ int strcmp (const char * s1, const char * s2)
     return *(unsigned char *)s1 < *(unsigned char *)s2 ? -1 : 1;
 }
 
-// strcopy: copy src to dest
-// taken from: https://en.wikibooks.org/wiki/C_Programming/string.h/strcpy#Usage_and_implementation
 char *strcpy(char *dest, const char *src)
 {
    char *save = dest;
