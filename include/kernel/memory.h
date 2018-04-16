@@ -21,3 +21,10 @@ void* kmalloc(uint32_t size);
  * @param ptr allocated memory address
  */
 void kfree(void* ptr);
+
+/**
+ * @brief copies ch into the first count characters of buffer
+ * 
+ * @param ptr allocated memory address
+ */
+void* kmemset(void* buffer, int ch, size_t count);

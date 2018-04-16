@@ -139,3 +139,13 @@ blockadded:
 		kdefrag();
 	}
 }
+
+void* kmemset(void* buffer, int ch, size_t count)
+{
+	for(int i = 0; i < count; i++)
+	{
+		((int*)buffer)[i] = ch;
+	}
+
+	return buffer;
+}
