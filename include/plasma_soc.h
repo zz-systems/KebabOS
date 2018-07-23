@@ -58,7 +58,7 @@
 #define gpio2       (kbind_device(gpio_t, GPIO2_BASE))
 #define gpio3       (kbind_device(gpio_t, GPIO3_BASE))
 
-#define display0    (kbind_device(display, DISPLAY0_BASE))
+#define display0    (kbind_device(display_t, DISPLAY0_BASE))
 
 // Define interrupt flags
 #define IR_UART_READ    (1 << 0)
