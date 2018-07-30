@@ -44,6 +44,7 @@ FILE* fdopen(device_descriptor_t *device_desc, int mode)
         file->write_buffer      = NULL;
         file->err               = 0;
 
+#ifdef display0
         if(device_desc->type == DEVICE_DISPLAY)
         {
             file->write_buffer  = (uint8_t*)(&display0->device.data);
@@ -54,7 +55,9 @@ FILE* fdopen(device_descriptor_t *device_desc, int mode)
             create_rb = FALSE;
             create_wb = FALSE;
         }
-        else if(device_desc->type == DEVICE_UART)
+        else
+#endif
+        if(device_desc->type == DEVICE_UART)
         {
             file->read_buffer  = (uint8_t*)(&uart0->device.data);
             file->read_ptr     = file->read_buffer;

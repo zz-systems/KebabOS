@@ -16,25 +16,27 @@
 #define MEMORY_SIZE         (8 * 1024 * 1024)
 
 // Provide Plasma SoC device addresses
-#define IRC_BASE            0x20000000
-#define UART0_BASE          0x20000100
+#define IRC_BASE            0x00005000
+#define UART0_BASE          0x00005100
 
-#define TIMER0_BASE         0x20000200
+#define TIMER0_BASE         0x00005200
 #define TIMER1_BASE         (TIMER1_BASE + 0x10)
 #define TIMER2_BASE         (TIMER2_BASE + 0x20)
 #define TIMER3_BASE         (TIMER3_BASE + 0x30)
 
-#define COUNTER0_BASE       0x20000300
+#define COUNTER0_BASE       0x00005300
 #define COUNTER1_BASE       (COUNTER0_BASE + 0x10)
 #define COUNTER2_BASE       (COUNTER0_BASE + 0x20)
 #define COUNTER3_BASE       (COUNTER0_BASE + 0x30)
 
-#define GPIO0_BASE          0x20000400
+#define GPIO0_BASE          0x00005400
 #define GPIO1_BASE          (GPIO0_BASE + 0x10)
 #define GPIO2_BASE          (GPIO0_BASE + 0x20)
 #define GPIO3_BASE          (GPIO0_BASE + 0x30)
 
-#define SPI_BASE            0x20000500
+#define SPI_BASE            0x00005500
+
+#define AVALON_BASE         0x10000000
 
 
 // Define devices
