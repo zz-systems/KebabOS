@@ -8,6 +8,7 @@
 #include <dev/gpio.h>
 #include <dev/uart.h>
 #include <dev/timer.h>
+#include <dev/generic.h>
 
 // 50MHz
 #define SYSTEM_CLOCK        (50 * 1000 * 1000)
@@ -37,6 +38,16 @@
 #define SPI_BASE            0x00005500
 
 #define AVALON_BASE         0x10000000
+#define AVALON_SDRAM_BASE   (AVALON_BASE + 0x0)
+
+#define AVALON_HEX_BASE     (AVALON_BASE + 0x04000000)
+#define AVALON_HEX0         (AVALON_HEX_BASE + 0x00)
+#define AVALON_HEX1         (AVALON_HEX_BASE + 0x10)
+#define AVALON_HEX2         (AVALON_HEX_BASE + 0x20)
+#define AVALON_HEX3         (AVALON_HEX_BASE + 0x30)
+#define AVALON_HEX4         (AVALON_HEX_BASE + 0x40)
+#define AVALON_HEX5         (AVALON_HEX_BASE + 0x50)
+
 
 
 // Define devices
@@ -57,6 +68,8 @@
 #define gpio1       (kbind_device(gpio_t, GPIO1_BASE))
 #define gpio2       (kbind_device(gpio_t, GPIO2_BASE))
 #define gpio3       (kbind_device(gpio_t, GPIO3_BASE))
+
+#define hex0        (kbind_device(generic_device_t, AVALON_HEX0_BASE))
 
 // Define interrupt flags
 #define IR_UART_READ    (1 << 0)
