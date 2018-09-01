@@ -2,6 +2,11 @@
 
 #include <plasma_soc.h>
 
+#ifndef __linux__
+#define __kebabos
+#endif
+
+
 /**
  * @brief read raw data at address
  */

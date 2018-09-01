@@ -1,7 +1,7 @@
 #include <plasma_soc.h>
 #include <kernel/device.h>
 #include <kernel/memory.h>
-#include <sys/string.h>
+#include <ksys/string.h>
 
 void kd_await_ready(device_t* device)
 {

@@ -25,7 +25,7 @@
 
 #include <kernel/kernel.h>
 #include <kernel/device.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // control register bits
 #define COUNTER_CONTROL_RESET               0x01 

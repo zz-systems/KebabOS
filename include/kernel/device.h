@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // Simplify address binding
 #define kbind_device(device_type, address) ((device_type*)(address))

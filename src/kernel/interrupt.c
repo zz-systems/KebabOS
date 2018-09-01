@@ -1,7 +1,7 @@
 #include <kernel/kernel.h>
 #include <kernel/interrupt.h>
 #include <kernel/io.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // IR table
 ir_handler ir_handlers[32] = { 0 };

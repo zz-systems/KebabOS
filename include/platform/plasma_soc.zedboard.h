@@ -3,12 +3,12 @@
 #pragma once
 
 #include <kernel/device.h>
-#include <dev/counter.h>
-#include <dev/irc.h>
-#include <dev/gpio.h>
-#include <dev/uart.h>
-#include <dev/display.h>
-#include <dev/timer.h>
+#include <kdev/counter.h>
+#include <kdev/irc.h>
+#include <kdev/gpio.h>
+#include <kdev/uart.h>
+#include <kdev/display.h>
+#include <kdev/timer.h>
 
 // 50MHz
 #define SYSTEM_CLOCK        (50 * 1000 * 1000)

@@ -1,4 +1,4 @@
-#include <dev/uart.h>
+#include <kdev/uart.h>
 #include <kernel/io.h>
 
 void uart_reset(uart* uart)

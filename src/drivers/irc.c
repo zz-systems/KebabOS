@@ -1,5 +1,5 @@
 
-#include <dev/irc.h>
+#include <kdev/irc.h>
 #include <kernel/io.h>
 
 int irc_is_set(irc_t *irc, int irq_number)

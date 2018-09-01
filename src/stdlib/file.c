@@ -1,6 +1,6 @@
-#include <sys/file.h>
-#include <sys/memory.h>
-#include <sys/string.h>
+#include <ksys/file.h>
+#include <ksys/memory.h>
+#include <ksys/string.h>
 #include <kernel/io.h>
 #include <kernel/kernel.h>
 

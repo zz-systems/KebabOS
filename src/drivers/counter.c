@@ -1,4 +1,4 @@
-#include <dev/counter.h>
+#include <kdev/counter.h>
 #include <kernel/io.h>
 
 void counter_set_reload(counter_t* counter, uint32_t value)

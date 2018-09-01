@@ -29,7 +29,7 @@
 
 #include <kernel/kernel.h>
 #include <kernel/device.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // interrupt bits
 #define IRQ_UART_READ_AVAILABLE     0

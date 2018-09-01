@@ -1,4 +1,4 @@
-#include <dev/display.h>
+#include <kdev/display.h>
 
 void display_reset(display_t* display)
 {

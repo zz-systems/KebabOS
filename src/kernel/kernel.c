@@ -1,6 +1,6 @@
 #include <plasma_soc.h>
 #include <kernel/memory.h>
-#include <sys/string.h>
+#include <ksys/string.h>
 
 
 void kmain()
