@@ -27,14 +27,14 @@
 #include <kernel/device.h>
 #include <ksys/types.h>
 
-typedef struct uart_device
+typedef struct kos_uart_t
 {
     device_t device;
-} uart;
+} kos_uart_t;
 
 
-void uart_reset     (uart* uart);
-void uart_enable    (uart* uart);
-void uart_disable   (uart* uart);
-uint8_t uart_read   (uart* uart);
-void uart_write     (uart* uart, uint8_t data);
+void uart_reset     (kos_uart_t* uart);
+void uart_enable    (kos_uart_t* uart);
+void uart_disable   (kos_uart_t* uart);
+uint8_t uart_read   (kos_uart_t* uart);
+void uart_write     (kos_uart_t* uart, uint8_t data);

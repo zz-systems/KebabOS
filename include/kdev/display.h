@@ -37,17 +37,17 @@
 #define DISPLAY_CONTROL_CLEAR               0x20
 
 
-typedef struct display_device
+typedef struct kos_display_t
 {
     device_t    device;
-} display_t;
+} kos_display_t;
 
 
-void display_reset              (display_t* display);
-void display_enable             (display_t* display);
-void display_disable            (display_t* display);
+void display_reset              (kos_display_t* display);
+void display_enable             (kos_display_t* display);
+void display_disable            (kos_display_t* display);
 
-void display_set_textmode       (display_t* display);
-void display_set_graphicmode    (display_t* display);
-void display_flush              (display_t* display);
-void display_clear              (display_t* display);
+void display_set_textmode       (kos_display_t* display);
+void display_set_graphicmode    (kos_display_t* display);
+void display_flush              (kos_display_t* display);
+void display_clear              (kos_display_t* display);

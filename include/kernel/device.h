@@ -28,6 +28,10 @@ typedef struct
     reg32_t data;       ///< data register
 } volatile device_t;
 
+#define OFFSET_CONTROL  0x0
+#define OFFSET_STATUS   0x4
+#define OFFSET_DATA     0x8
+
 /**
  * @brief Device descriptor: device base registers associated with device type
  * 

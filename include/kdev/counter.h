@@ -40,13 +40,13 @@
 // status register bits
 #define COUNTER_STATUS_OVERFLOW             0x02
 
-typedef struct
+typedef struct kos_counter_t
 {
     device_t    device;
     reg32_t     reload;
-} counter_t;
+} kos_counter_t;
 
 
-void counter_set_reload(counter_t* counter, uint32_t value);
-void counter_reset(counter_t* counter, uint32_t flags);
-void counter_enable(counter_t* counter, uint32_t flags);
+void counter_set_reload(kos_counter_t* counter, uint32_t value);
+void counter_reset(kos_counter_t* counter, uint32_t flags);
+void counter_enable(kos_counter_t* counter, uint32_t flags);

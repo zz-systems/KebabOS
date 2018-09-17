@@ -10,6 +10,10 @@
 #include <kdev/display.h>
 #include <kdev/timer.h>
 
+#ifndef PLATFORM
+    #define PLATFORM de1_soc
+#endif
+
 #define PLATFORM_H <platform/plasma_soc.PLATFORM.h>
 
 #include PLATFORM_H

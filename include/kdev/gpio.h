@@ -37,8 +37,8 @@
 // status register bits
 #define COUNTER_STATUS_READY                0x00
 
-typedef struct gpio_device
+typedef struct kos_gpio_t
 {
     device_t    device;
     reg32_t     mask;
-} gpio_t;
+} kos_gpio_t;

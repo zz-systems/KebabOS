@@ -18,8 +18,8 @@
 
 #pragma once
 
-//#include <kernel/kernel.h>
-//#include <kernel/device.h>
+#include <kernel/kernel.h>
+#include <kernel/device.h>
 #include <ksys/types.h>
 
 #ifndef __kebabos__

@@ -39,35 +39,38 @@
 
 #define AVALON_BASE         0x10000000
 #define AVALON_SDRAM_BASE   (AVALON_BASE + 0x0)
+#define AVALON_PERIPH_BASE  (AVALON_BASE + 0x04000000)
 
-#define AVALON_HEX_BASE     (AVALON_BASE + 0x04000000)
-#define AVALON_HEX0         (AVALON_HEX_BASE + 0x00)
-#define AVALON_HEX1         (AVALON_HEX_BASE + 0x10)
-#define AVALON_HEX2         (AVALON_HEX_BASE + 0x20)
-#define AVALON_HEX3         (AVALON_HEX_BASE + 0x30)
-#define AVALON_HEX4         (AVALON_HEX_BASE + 0x40)
-#define AVALON_HEX5         (AVALON_HEX_BASE + 0x50)
+#define AVALON_HEX0         (AVALON_PERIPH_BASE + 0x70)
+#define AVALON_HEX1         (AVALON_PERIPH_BASE + 0x60)
+#define AVALON_HEX2         (AVALON_PERIPH_BASE + 0x50)
+#define AVALON_HEX3         (AVALON_PERIPH_BASE + 0x40)
+#define AVALON_HEX4         (AVALON_PERIPH_BASE + 0x30)
+#define AVALON_HEX5         (AVALON_PERIPH_BASE + 0x20)
+
+#define AVALON_SWITCHES     (AVALON_PERIPH_BASE + 0x10)
+#define AVALON_BUTTONS      (AVALON_PERIPH_BASE + 0x00)
 
 
 
 // Define devices
-#define irc0        (kbind_device(irc_t, IRC_BASE))
-#define uart0       (kbind_device(uart,  UART0_BASE))
+#define irc0        (kbind_device(kos_irc_t, IRC_BASE))
+#define uart0       (kbind_device(kos_uart_t,  UART0_BASE))
 
-#define timer0      (kbind_device(timer_t, TIMER0_BASE))
-#define timer1      (kbind_device(timer_t, TIMER1_BASE))
-#define timer2      (kbind_device(timer_t, TIMER2_BASE))
-#define timer3      (kbind_device(timer_t, TIMER3_BASE))
+#define timer0      (kbind_device(kos_timer_t, TIMER0_BASE))
+#define timer1      (kbind_device(kos_timer_t, TIMER1_BASE))
+#define timer2      (kbind_device(kos_timer_t, TIMER2_BASE))
+#define timer3      (kbind_device(kos_timer_t, TIMER3_BASE))
 
-#define counter0    (kbind_device(counter_t, COUNTER0_BASE))
-#define counter1    (kbind_device(counter_t, COUNTER1_BASE))
-#define counter2    (kbind_device(counter_t, COUNTER2_BASE))
-#define counter3    (kbind_device(counter_t, COUNTER3_BASE))
+#define counter0    (kbind_device(kos_counter_t, COUNTER0_BASE))
+#define counter1    (kbind_device(kos_counter_t, COUNTER1_BASE))
+#define counter2    (kbind_device(kos_counter_t, COUNTER2_BASE))
+#define counter3    (kbind_device(kos_counter_t, COUNTER3_BASE))
 
-#define gpio0       (kbind_device(gpio_t, GPIO0_BASE))
-#define gpio1       (kbind_device(gpio_t, GPIO1_BASE))
-#define gpio2       (kbind_device(gpio_t, GPIO2_BASE))
-#define gpio3       (kbind_device(gpio_t, GPIO3_BASE))
+#define gpio0       (kbind_device(kos_gpio_t, GPIO0_BASE))
+#define gpio1       (kbind_device(kos_gpio_t, GPIO1_BASE))
+#define gpio2       (kbind_device(kos_gpio_t, GPIO2_BASE))
+#define gpio3       (kbind_device(kos_gpio_t, GPIO3_BASE))
 
 #define hex0        (kbind_device(generic_device_t, AVALON_HEX0_BASE))
 
