@@ -1,7 +1,7 @@
 #include <plasma_soc.h>
 #include <kernel/device.h>
 #include <kernel/memory.h>
-#include <sys/string.h>
+#include <ksys/string.h>
 
 void kd_await_ready(device_t* device)
 {
@@ -76,11 +76,13 @@ device_descriptor_t *kdopen(const char* path)
             descriptor->device = &uart0->device;
             descriptor->type = DEVICE_UART; 
         }
+        #ifdef display0
         else if(strcmp(path, "dev/display0") == 0)
         {
             descriptor->device = &display0->device;
             descriptor->type = DEVICE_DISPLAY;
         }
+        #endif
         else
         {
             kfree(descriptor);

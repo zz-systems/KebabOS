@@ -1,44 +1,52 @@
-// -- TITLE:  GPIO device
+// --------------------------------------------------------------------------------
+// -- TITLE:  Counter device
 // -- AUTHOR: Sergej Zuyev (sergej.zuyev - at - zz-systems.net)
 // --------------------------------------------------------------------------------
-// -- GPIO
+// -- COUNTER
 // ----------------|-----------|-------|-------------------------------------------
 // -- REGISTER     | address   | mode  | description
 // ----------------|-----------|-------|-------------------------------------------
 // -- control      | 0x0       | r/w   | control register
 // -- status       | 0x4       | r     | status register
-// -- data         | 0x8       | r/w   | GPIO data
-// -- mask         | 0xC       | r/w   | GPIO irq mask
+// -- data         | 0x8       | r     | current counter value
+// -- reload       | 0xC       | r/w   | reload value on overflow
 // ----------------|-----------|-------|-------------------------------------------
 // -- CONTROL      |           |       | 
 // ----------------|-----------|-------|-------------------------------------------
 // -- reset        | 0         | r/w   | user reset
-// -- irq mask en  | 1         | r/w   | use irq mask
+// -- enable       | 1         | r/w   | enable counter
+// -- autoreload   | 2         | r/w   | reload on overflow
+// -- direction    | 3         | r/w   | direction (0 = count up, 1 = count down)
 // ----------------|-----------|-------|-------------------------------------------
 // -- STATUS       |           |       | 
 // ----------------|-----------|-------|-------------------------------------------
-// -- ready        | 0         | r     | gpio ready
-// -- davail       | 1         | r     | data available
+// -- ready        | 0         | r     | counter ready
+// -- overflow     | 1         | r     | counter overflow, reloaded
 // ----------------|-----------|-------|-------------------------------------------
 
 #pragma once
 
 #include <kernel/kernel.h>
 #include <kernel/device.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // control register bits
-#define COUNTER_CONTROL_RESET               0x01 
-#define COUNTER_CONTROL_ENABLE              0x02
+#define COUNTER_CONTROL_AUTORESET           0x04 
 
-// interrupt bits
-// TODO
+// count modes
+#define COUNTER_COUNT_UP                    0x00
+#define COUNTER_COUNT_DOWN                  0x08 
 
 // status register bits
-#define COUNTER_STATUS_READY                0x00
+#define COUNTER_STATUS_OVERFLOW             0x02
 
-typedef struct gpio_device
+typedef struct kos_counter_t
 {
     device_t    device;
-    reg32_t     mask;
-} gpio_t;
+    reg32_t     reload;
+} kos_counter_t;
+
+
+void counter_set_reload(kos_counter_t* counter, uint32_t value);
+void counter_reset(kos_counter_t* counter, uint32_t flags);
+void counter_enable(kos_counter_t* counter, uint32_t flags);

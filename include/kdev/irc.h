@@ -29,7 +29,7 @@
 
 #include <kernel/kernel.h>
 #include <kernel/device.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // interrupt bits
 #define IRQ_UART_READ_AVAILABLE     0
@@ -54,7 +54,7 @@
 
 #define IRQ_BUS_ERR                 31
 
-typedef struct
+typedef struct kos_irc_t
 {
     device_t  device;
     reg32_t imm_flags;
@@ -62,11 +62,11 @@ typedef struct
     reg32_t invert;
     reg32_t mask;
     reg32_t edge;
-} irc_t;
+} kos_irc_t;
 
 
-int irc_is_set      (irc_t *irc, int irq_number);
-void irc_clear      (irc_t *irc, int irq_number);
-void irc_set_mask   (irc_t *irc, int irq_number, int value);
-void irc_set_pol    (irc_t *irc, int irq_number, int value);
-void irc_set_edge   (irc_t *irc, int irq_number, int value);
+int irc_is_set      (kos_irc_t *irc, int irq_number);
+void irc_clear      (kos_irc_t *irc, int irq_number);
+void irc_set_mask   (kos_irc_t *irc, int irq_number, int value);
+void irc_set_pol    (kos_irc_t *irc, int irq_number, int value);
+void irc_set_edge   (kos_irc_t *irc, int irq_number, int value);

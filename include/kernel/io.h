@@ -54,24 +54,24 @@ int kd_puts(device_t* device, const char *string);
  * @brief test flags in device control register
  * 
  */
-#define kdc_test(dev, flags)    (dev->device.control & flags)
+#define kdc_test(dev, flags)    (dev->device.control & (flags)
 
 /**
  * @brief write data to device control register
  * 
  */
-#define kdc_write(dev, data)    (dev->device.control = (data))
+#define kdc_write(dev, val)    (dev->device.control = (val))
 
 /**
  * @brief set flags in device control register
  * 
  */
-#define kdc_set(dev, flags)     (dev->device.control |= flags)
+#define kdc_set(dev, flags)     (dev->device.control |= (flags))
 
 /**
  * @brief unset flags in device control register
  */
-#define kdc_unset(dev, flags)   (dev->device.control &= ~flags)
+#define kdc_unset(dev, flags)   (dev->device.control &= ~(flags)
 
 /**
  * @brief read data from device status register
@@ -81,7 +81,7 @@ int kd_puts(device_t* device, const char *string);
 /**
  * @brief test flags in device status register
  */
-#define kds_test(dev, flags)    (dev->device.status & flags)
+#define kds_test(dev, flags)    (dev->device.status & (flags))
 
 /**
  * @brief read data from device data register 
@@ -91,4 +91,4 @@ int kd_puts(device_t* device, const char *string);
 /**
  * @brief write data to device register
  */
-#define kdd_write(dev, data)    (dev->device.data = (data))
+#define kdd_write(dev, val)    (dev->device.data = (val))

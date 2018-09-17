@@ -9,7 +9,6 @@
 // -- control      | 0x0       | r/w   | control register
 // -- status       | 0x4       | r     | status register
 // -- data         | 0x8       | w     | vram data window
-// -- vaddr        | 0xC       | r/w   | vram address
 // ----------------|-----------|-------|-------------------------------------------
 // -- CONTROL      |           |       | 
 // ----------------|-----------|-------|-------------------------------------------
@@ -29,7 +28,7 @@
 
 #include <kernel/kernel.h>
 #include <kernel/device.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // control register bits
 #define DISPLAY_CONTROL_IMMEDIATE           0x04
@@ -37,22 +36,18 @@
 #define DISPLAY_CONTROL_FLUSH               0x10
 #define DISPLAY_CONTROL_CLEAR               0x20
 
-// interrupt bits
-// TODO
 
-
-typedef struct display_device
+typedef struct kos_display_t
 {
     device_t    device;
-    reg32_t     addr;
-} display;
+} kos_display_t;
 
 
-void display_reset              (display* display);
-void display_enable             (display* display);
-void display_disable            (display* display);
+void display_reset              (kos_display_t* display);
+void display_enable             (kos_display_t* display);
+void display_disable            (kos_display_t* display);
 
-void display_set_textmode       (display* display);
-void display_set_graphicmode    (display* display);
-void display_flush              (display* display);
-void display_clear              (display* display);
+void display_set_textmode       (kos_display_t* display);
+void display_set_graphicmode    (kos_display_t* display);
+void display_flush              (kos_display_t* display);
+void display_clear              (kos_display_t* display);

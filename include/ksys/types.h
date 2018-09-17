@@ -12,9 +12,17 @@ typedef uint32_t addr_t;
 typedef uint32_t uintptr_t;
 typedef uint32_t size_t;
 
-#define NULL    (0)
-#define TRUE    (1)
-#define FALSE   (0)
+#ifndef NULL
+    #define NULL    (0)
+#endif
+
+#ifndef TRUE
+    #define TRUE    (1)
+#endif 
+
+#ifndef FALSE
+    #define FALSE   (0)
+#endif
 
 #define set(value, bit) (value | (1 << bit))
 #define unset(value, bit) (value & (0 << bit))

@@ -28,7 +28,7 @@
 
 #include <kernel/kernel.h>
 #include <kernel/device.h>
-#include <sys/types.h>
+#include <ksys/types.h>
 
 // control register bits
 #define TIMER_CONTROL_AUTORESET             (0x04)
@@ -44,13 +44,13 @@
 // status register bits
 #define COUNTER_STATUS_OVERFLOW             0x02
 
-typedef struct
+typedef struct kos_timer_t
 {
     device_t    device;
     reg32_t     reload;
-} timer_t;
+} kos_timer_t;
 
 
-void timer_set_unit(timer_t* timer, uint32_t unit);
-void timer_set_autoreset(timer_t* timer, int value);
-void timer_set_reload(timer_t* timer, uint32_t value);
+void timer_set_unit(kos_timer_t* timer, uint32_t unit);
+void timer_set_autoreset(kos_timer_t* timer, int value);
+void timer_set_reload(kos_timer_t* timer, uint32_t value);
